@@ -1,8 +1,7 @@
-# Day08
-# 1
-# a] Solving problems using array functions on rest countries data.
+Day08
+# 1a] Solving problems using array functions on rest countries data.
 ----
-# b] Get all the countries from Asia continent /region using Filter function.
+# 1b] Get all the countries from Asia continent /region using Filter function.
 
 ----   var request=new XMLHttpRequest();
        request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
@@ -15,7 +14,7 @@
        console.log(country);
        }
 
-# c] Get all the countries with a population of less than 2 lakhs using Filter function.
+# 1c] Get all the countries with a population of less than 2 lakhs using Filter function.
 
 ----  var request=new XMLHttpRequest();
       request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
@@ -28,11 +27,20 @@
       console.log(country);
       }
 
-# d] Print the following details name, capital, flag using forEach function.
+# 1d] Print the following details name, capital, flag using forEach function.
 ----
 
-# e] Print the total population of countries using reduce function.
+# 1e] Print the total population of countries using reduce function.
 ----
 
-# f] Print the country which uses US Dollars as currency.
-----
+# 1f] Print the country which uses US Dollars as currency.
+----  var request=new XMLHttpRequest();
+      request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+      request.send();
+      request.onload=function(){
+      var result=JSON.parse(request.response);
+      console.log(result);
+      console.log(result[0].name);
+      var country=result.filter((ele)=>ele.currencies[0].name==="United States dollar");
+      console.log(country);
+      }
